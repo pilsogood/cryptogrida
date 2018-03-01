@@ -22,8 +22,8 @@ contract SampleToken {
         decimals = _decimal;
         totalSupply = _initialSupply * (10 ** uint256(_decimal));   // 총 공급량을 설정
         balanceOf[msg.sender] = totalSupply;                        // sender 에게 공급량 전체를 할당
-        name = _name;                                               // 표시할 심볼을 설정
-        symbol = _symbol;
+        name = _name;                                               // 표시할 이름 설정
+        symbol = _symbol;                                           // 표시할 심볼 설정				
     }
 
     /* 코인 전송 */
