@@ -1,5 +1,6 @@
 pragma solidity ^0.4.18;
 
+
 contract SampleToken {
 
     /* 전체 배열 밸런스 설정 */
@@ -18,7 +19,7 @@ contract SampleToken {
     uint256 public totalSupply;
 
     /* 토큰 계약 초기화 */
-    function SampleToken( uint256 initialSupply, string tokenName, string tokenSymbol) public {
+    function SampleToken() public {
         decimals = _decimal;
         totalSupply = _initialSupply * (10 ** uint256(_decimal));   // 총 공급량을 설정
         balanceOf[msg.sender] = totalSupply;                        // sender 에게 공급량 전체를 할당
@@ -27,9 +28,9 @@ contract SampleToken {
     }
 
     /* 코인 전송 */
-    function transfer(address _to, uint256 _value) {
-        if (balanceOf[msg.sender] < _value) throw;                   // sender가 충분한 코인이 있는지 확인
-        if (balanceOf[_to] + _value < balanceOf[_to]) throw;         // 오버플로우 체크 
+    function transfer(address _to, uint256 _value) public {
+        if (balanceOf[msg.sender] < _value) revert();                   // sender가 충분한 코인이 있는지 확인
+        if (balanceOf[_to] + _value < balanceOf[_to]) revert();         // 오버플로우 체크 
         balanceOf[msg.sender] -= _value;                             // sender에게서 전송한 코인양을 뺌
         balanceOf[_to] += _value;                                    // 수신자에게는 전송한 코인양을 더함 
     }
