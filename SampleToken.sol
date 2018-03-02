@@ -1,6 +1,5 @@
 pragma solidity ^0.4.18;
 
-
 contract SampleToken {
 
     /* 전체 배열 밸런스 설정 */
@@ -29,8 +28,8 @@ contract SampleToken {
 
     /* 코인 전송 */
     function transfer(address _to, uint256 _value) public {
-        if (balanceOf[msg.sender] < _value) revert();                   // sender가 충분한 코인이 있는지 확인
-        if (balanceOf[_to] + _value < balanceOf[_to]) revert();         // 오버플로우 체크 
+        if (balanceOf[msg.sender] < _value) revert();                // sender가 충분한 코인이 있는지 확인
+        if (balanceOf[_to] + _value < balanceOf[_to]) revert();      // 오버플로우 체크 
         balanceOf[msg.sender] -= _value;                             // sender에게서 전송한 코인양을 뺌
         balanceOf[_to] += _value;                                    // 수신자에게는 전송한 코인양을 더함 
     }
