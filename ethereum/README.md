@@ -1,4 +1,4 @@
-# Install
+# Smart Contract Development Environment
 
 > test 
 
@@ -6,9 +6,9 @@
 2. test 
 3. test 
 
-	<?
-	phpinfo();
-	?>
+    <?
+    phpinfo();
+    ?>
 
 ---------------------------------------
 
