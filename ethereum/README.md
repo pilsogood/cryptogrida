@@ -8,9 +8,7 @@
 
 Source
 <pre><code>
-	<?
     phpinfo();
-    ?>
 </code></pre>
 end.
 
