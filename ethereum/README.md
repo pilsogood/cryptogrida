@@ -7,9 +7,7 @@
 3. test 
 
 Source
-<pre><code>
-    phpinfo();
-</code></pre>
+<pre><code>phpinfo();</code></pre>
 end.
 
 ---------------------------------------
